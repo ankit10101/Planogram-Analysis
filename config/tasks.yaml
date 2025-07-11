@@ -1,0 +1,41 @@
+
+analyze_shelf:
+    description: >
+        Analyze and extract insights from the shelf image at {shelf_url} using your multimodal capabilities . 
+        Collect visual data and caption the current product arrangement.
+        Conduct a thorough analysis of the shelf image at {shelf_url} in the store.
+        Prepare a detailed report highlighting the current layout, products,
+        product placement and any observed issues.
+        Ensure the report is detailed at the level of product names.
+    expected_output: >
+        A comprehensive report on the shelf image at {shelf_url}, including visual data,
+        analysis of product placement, space utilization and any recommendations for improvement.
+    agent: store_manager_agent
+
+provide_recommendations:
+    description: >
+        Review the report on shelf provided by the Store Manager.
+        Utilize your knowledge of the retail market and internet to assess current trends
+        relevant to the products in this shelf.
+        Develop expert recommendations to optimize sales and customer satisfaction.
+        Ensure the recommendations are detailed and includes details like product names.
+    expected_output: >
+        A set of actionable recommendations for rearranging the shelf,
+        aligned with current market trends and consumer preferences.
+    agent: market_analyst_agent
+
+create_action_plan:
+    description: >
+        List the recommendations from the Market Analyst,
+        then develop a detailed action plan for Store manager and Store buyer
+        to implement the changes in markdown format without '```'.
+        Ensure the plan is practical and outlines the steps needed to rearrange
+        the products effectively.
+        Be smart and well explained.
+        Give the explanation of your recommendations and the goal to achieve.
+    expected_output: >
+        A detailed list of recommendation and action plan for rearranging and
+        improving the shelf according to market trends,
+        including market analyst recommendations and translation into
+        practical tasks for the Store manager and the Buyer in markdown format without '```'.
+    agent: store_manager_agent
